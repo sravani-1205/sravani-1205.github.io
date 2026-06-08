@@ -1,134 +1,298 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vidigutta Sravani | Python Backend Developer</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#0f172a;
+background:linear-gradient(-45deg,#0f172a,#1e1b4b,#312e81,#0f172a);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
 color:white;
-line-height:1.6;
+overflow-x:hidden;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
 header{
-text-align:center;
-padding:80px 20px;
-background:linear-gradient(135deg,#2563eb,#7c3aed);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
 }
 
-header h1{
-font-size:3rem;
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+width:100%;
+gap:50px;
+flex-wrap:wrap;
 }
 
-header p{
+.hero-text{
+flex:1;
+}
+
+.hero-text h1{
+font-size:4rem;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.hero-text p{
 font-size:1.2rem;
-margin-top:10px;
+opacity:.9;
+margin-bottom:25px;
+}
+
+.typing{
+color:#60a5fa;
+font-weight:600;
+font-size:1.3rem;
+height:35px;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 25px;
+padding:14px 30px;
 background:white;
-color:#2563eb;
+color:#1e40af;
 text-decoration:none;
-border-radius:5px;
-font-weight:bold;
+border-radius:50px;
+font-weight:600;
+transition:.3s;
+margin-right:15px;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+}
+
+.hero-image{
+flex:1;
+text-align:center;
+}
+
+.hero-image img{
+width:320px;
+height:320px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid rgba(255,255,255,.3);
+box-shadow:0 0 50px rgba(96,165,250,.7);
 }
 
 section{
-padding:60px 10%;
+padding:80px 10%;
 }
 
 h2{
-margin-bottom:20px;
-color:#60a5fa;
+text-align:center;
+font-size:2.2rem;
+margin-bottom:40px;
+color:#93c5fd;
+}
+
+.about{
+max-width:900px;
+margin:auto;
+text-align:center;
+font-size:1.1rem;
+line-height:1.9;
 }
 
 .skills{
 display:flex;
 flex-wrap:wrap;
-gap:10px;
+justify-content:center;
+gap:15px;
 }
 
 .skill{
-background:#1e293b;
-padding:10px 15px;
-border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+padding:12px 20px;
+border-radius:30px;
+transition:.3s;
 }
 
-.projects{
+.skill:hover{
+transform:translateY(-5px);
+background:#2563eb;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
 
 .card{
-background:#1e293b;
-padding:20px;
-border-radius:10px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.1);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(96,165,250,.4);
 }
 
 .card h3{
-margin-bottom:10px;
+margin-bottom:15px;
+color:#93c5fd;
+}
+
+.contact{
+text-align:center;
+line-height:2.2;
+}
+
+.contact a{
+color:#93c5fd;
+text-decoration:none;
 }
 
 footer{
 text-align:center;
-padding:20px;
-background:#020617;
+padding:30px;
+background:rgba(0,0,0,.3);
+margin-top:40px;
 }
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column-reverse;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:2.7rem;
+}
+
+.hero-image img{
+width:250px;
+height:250px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
-<h1>Vidigutta Sravani</h1>
-<p>Python Backend Developer | Django | FastAPI | Flask | MySQL</p>
 
-<a href="https://github.com/sravani-1205" class="btn">
-View GitHub
-</a>
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Vidigutta Sravani</h1>
+
+<div class="typing" id="typing"></div>
+
+<p>
+Python Backend Developer and Python Mentor with experience in building scalable backend systems, RESTful APIs, authentication services, and database-driven applications using Django, FastAPI, Flask, and MySQL. Passionate about mentoring aspiring developers, solving real-world challenges, and creating efficient software solutions with clean architecture and best development practices.
+</p>
+
+<a href="https://github.com/sravani-1205" class="btn">GitHub</a>
+
+<a href="https://linkedin.com/in/sravani-vidigutta-6a115a2b4" class="btn">LinkedIn</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="profile.jpg" alt="Sravani">
+
+</div>
+
+</div>
+
 </header>
 
 <section>
+
 <h2>About Me</h2>
 
-<p>
-I am a passionate Python Backend Developer and Computer Science student.
-I enjoy building REST APIs, backend systems, database-driven applications,
-and scalable web solutions using Django, FastAPI, Flask, and MySQL.
-</p>
+<div class="about">
+
+I am a dedicated Python Backend Developer and Mentor focused on building secure, scalable and high-performance web applications. My expertise includes backend development, API design, authentication systems, database management and mentoring students in Python programming and software development.
+
+</div>
 
 </section>
 
 <section>
 
-<h2>Skills</h2>
+<h2>Technical Skills</h2>
 
 <div class="skills">
+
 <div class="skill">Python</div>
 <div class="skill">Django</div>
 <div class="skill">FastAPI</div>
 <div class="skill">Flask</div>
 <div class="skill">MySQL</div>
-<div class="skill">REST API</div>
+<div class="skill">REST APIs</div>
+<div class="skill">JWT Authentication</div>
 <div class="skill">Git</div>
 <div class="skill">GitHub</div>
-<div class="skill">JWT Authentication</div>
 <div class="skill">HTML</div>
 <div class="skill">CSS</div>
 <div class="skill">JavaScript</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Work Experience</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Python Mentor</h3>
+<p>
+Mentoring students and aspiring developers in Python programming, object-oriented programming, backend development, problem-solving techniques and real-world project development.
+</p>
+</div>
+
+<div class="card">
+<h3>Python Backend Developer</h3>
+<p>
+Developing scalable backend applications, REST APIs, authentication systems, database integrations and production-ready web services using Django, FastAPI, Flask and MySQL.
+</p>
+</div>
+
 </div>
 
 </section>
@@ -137,41 +301,31 @@ and scalable web solutions using Django, FastAPI, Flask, and MySQL.
 
 <h2>Projects</h2>
 
-<div class="projects">
+<div class="grid">
 
 <div class="card">
 <h3>Student Tracker</h3>
-<p>
-Student management system developed using Python and database integration.
-</p>
+<p>Student management system with database integration and reporting.</p>
 </div>
 
 <div class="card">
 <h3>Food Ordering System</h3>
-<p>
-Backend application for managing food orders, menus and customers.
-</p>
+<p>Backend platform for managing menus, customers and orders.</p>
 </div>
 
 <div class="card">
 <h3>E-Commerce System</h3>
-<p>
-Online shopping platform with product and order management features.
-</p>
+<p>Online shopping backend with product and order management.</p>
 </div>
 
 <div class="card">
 <h3>Smart Commute Planner</h3>
-<p>
-Route planning and travel management application.
-</p>
+<p>Route planning and travel management application.</p>
 </div>
 
 <div class="card">
 <h3>Authentication Service</h3>
-<p>
-JWT Authentication, Login, Registration, RBAC and Refresh Token APIs.
-</p>
+<p>JWT Authentication, Registration, Login and RBAC APIs.</p>
 </div>
 
 </div>
@@ -182,6 +336,10 @@ JWT Authentication, Login, Registration, RBAC and Refresh Token APIs.
 
 <h2>Contact</h2>
 
+<div class="contact">
+
+<p>Email: sravanividigutta@gmail.com</p>
+
 <p>
 GitHub:
 <a href="https://github.com/sravani-1205">
@@ -190,18 +348,58 @@ github.com/sravani-1205
 </p>
 
 <p>
-LinkedIn: linkedin.com/in/sravani-vidigutta-6a115a2b4
+LinkedIn:
+<a href="https://linkedin.com/in/sravani-vidigutta-6a115a2b4">
+linkedin.com/in/sravani-vidigutta-6a115a2b4
+</a>
 </p>
 
-<p>
-Email: sravanividigutta@gmail.com
-</p>
+</div>
 
 </section>
 
 <footer>
-<p>© 2026 Vidigutta Sravani | Python Backend Developer</p>
+
+© 2026 Vidigutta Sravani | Python Backend Developer
+
 </footer>
+
+<script>
+
+const roles=[
+"Python Backend Developer",
+"Python Mentor",
+"Django Developer",
+"FastAPI Developer"
+];
+
+let roleIndex=0;
+let charIndex=0;
+
+function typeEffect(){
+
+const text=roles[roleIndex];
+
+document.getElementById("typing").innerHTML=
+text.substring(0,charIndex);
+
+charIndex++;
+
+if(charIndex<=text.length){
+setTimeout(typeEffect,100);
+}else{
+setTimeout(()=>{
+charIndex=0;
+roleIndex=(roleIndex+1)%roles.length;
+typeEffect();
+},1500);
+}
+
+}
+
+typeEffect();
+
+</script>
 
 </body>
 </html>
